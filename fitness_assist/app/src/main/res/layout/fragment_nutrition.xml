@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".NutritionFragment">
+
+        <!-- Заголовок -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Питание"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"/>
+
+        <!-- Счётчик калорий -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/tv_calorie_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/2000 ккал"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#9C27B0"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <ProgressBar
+                android:id="@+id/progress_bar_calories"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginBottom="20dp"
+                android:max="100"/>
+
+            <!-- Установка цели -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <EditText
+                    android:id="@+id/et_calorie_goal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Новая цель"
+                    android:inputType="number"
+                    android:maxLength="4"/>
+
+                <Button
+                    android:id="@+id/btn_set_goal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Установить"
+                    android:layout_marginStart="10dp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_reset_nutrition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Сбросить день"
+                android:backgroundTint="#9C27B0"/>
+
+        </LinearLayout>
+
+        <!-- Быстрое добавление -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Быстрое добавление"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Выберите продукт:"
+                android:layout_marginBottom="10dp"/>
+
+            <ListView
+                android:id="@+id/lv_food_items"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btn_add_custom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Добавить свой продукт"/>
+
+        </LinearLayout>
+
+        <!-- Добавленные продукты -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сегодня съедено"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <ListView
+                android:id="@+id/lv_added_foods"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:divider="#E0E0E0"
+                android:dividerHeight="1dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

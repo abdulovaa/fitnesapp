@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment"> <!-- Login как стартовый -->
+
+    <!-- Login Fragment -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.fitness_assist.LoginFragment"
+        android:label="Вход"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <!-- Home Fragment -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.fitness_assist.HomeFragment"
+        android:label="Главная"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_workout"
+            app:destination="@id/workoutFragment" />
+        <action
+            android:id="@+id/action_home_to_water"
+            app:destination="@id/waterFragment" />
+        <action
+            android:id="@+id/action_home_to_nutrition"
+            app:destination="@id/nutritionFragment" />
+        <action
+            android:id="@+id/action_home_to_settings"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <!-- Workout Fragment -->
+    <fragment
+        android:id="@+id/workoutFragment"
+        android:name="com.example.fitness_assist.WorkoutFragment"
+        android:label="Тренировка"
+        tools:layout="@layout/fragment_workout" />
+
+    <!-- Water Fragment -->
+    <fragment
+        android:id="@+id/waterFragment"
+        android:name="com.example.fitness_assist.WaterFragment"
+        android:label="Водный баланс"
+        tools:layout="@layout/fragment_water" />
+
+    <!-- Nutrition Fragment -->
+    <fragment
+        android:id="@+id/nutritionFragment"
+        android:name="com.example.fitness_assist.NutritionFragment"
+        android:label="Питание"
+        tools:layout="@layout/fragment_nutrition" />
+
+    <!-- Settings Fragment -->
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.fitness_assist.SettingsFragment"
+        android:label="Настройки"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settings_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
